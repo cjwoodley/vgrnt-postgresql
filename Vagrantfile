@@ -12,6 +12,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     #postgresql.vm.provision :ansible do |ansible|
     #  ansible.playbook = "provisioning/playbook.yml"
     #end
+    postgresql.vm.provision 'shell', path: 'scripts/postgres.sh'
     config.vm.box_download_insecure = true
     config.vm.provider "virtualbox"
   end
